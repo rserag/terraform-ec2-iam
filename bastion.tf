@@ -17,6 +17,7 @@ module "bastion" {
   instance_count              = 1
   ami                         = "ami-042e8287309f5df03"
   instance_type               = "t2.small"
+  iam_instance_profile        = aws_iam_instance_profile.bastion_profile.name
   key_name                    = module.key_pair.this_key_pair_key_name
   monitoring                  = false
   associate_public_ip_address = true
